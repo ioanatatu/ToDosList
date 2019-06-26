@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <title>slide bar test</title>
+
+    <script src="https://kit.fontawesome.com/1c468e9f21.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <div onkeypress="return (this.innerText.length <= 25)" class="site-title" contenteditable="true" spellcheck="false">your todos list</div>
+            <nav class="main-navigation" role="navigation">
+                <ul id="todo">
+                    <li class="title">how it works</li>
+                    <hr>
+                    <li><a href="#">_add an item to your list</a></li>
+                    <li><a href="#">_rename your list by clicking on the name</a></li>
+                    <li><a href="#">_click or tap once to (un)mark it as done</a></li>
+                    <li><a href="#">_delete the item</a></li>
+                    <li><a href="#">_choose a category for the item</a></li>
+                </ul>
+                <i class="fas fa-chevron-circle-down" id="closeBtn"></i>
+            </nav>
+        </header>
+
+        <main>
+            <div class="box" id="enterItem" method="post">
+                <input class="enter-item" type="text" name="shopping-item" placeholder="strawberries">
+                <i class="fas fa-arrow-circle-right submit"></i>
+            </div>
+
+            <div class="wrapper">
+                <ul class="list">
+                    <li><span>
+                            <i class="fas fa-trash-alt"></i>
+                        </span> wash cat</li>
+                    <li><span>
+                            <i class="fas fa-trash-alt"></i>
+                        </span> pet dishes</li>
+                    <li><span>
+                            <i class="fas fa-trash-alt"></i>
+                        </span> water laptop</li>
+                    <li><span>
+                            <i class="fas fa-trash-alt"></i>
+                        </span> charge flowers</li>
+                </ul>
+            </div>
+
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body></html>
