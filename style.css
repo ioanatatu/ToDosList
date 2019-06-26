@@ -392,7 +392,7 @@ h2 {
         background-color: black;
         border: 1px solid black;
         border-radius: 5px 0 0 5px;
-        font-size: 10px;
+        font-size: 15px;
         padding-top: 5px;
         margin-right: 10px;
         width: 0;
@@ -408,7 +408,7 @@ h2 {
     .fa-trash-alt {
         margin: 0;
         padding: 0;
-        color: pink;
+        color: white;
     }
 
     .fa-trash-alt:hover {
