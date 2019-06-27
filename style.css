@@ -1,4 +1,4 @@
-/* --------------------------------------- GENERAL ------------------------------------------ */
+/* ------------------------------- GENERAL -------------------------------------- */
 
 * {
     font-family: 'Montserrat', sans-serif;
@@ -7,14 +7,15 @@
     margin: 0;
     padding: 0;
 }
-
+i {
+    color: #333;
+}
 body {
     height: 100vh;
     display: flex;
     justify-content: center;
     background-color: #b7b8ba;
 }
-
 .container {
     min-width: 80%;
     max-width: 80%;
@@ -24,12 +25,32 @@ body {
     border: .5px solid #cccdd0;
     border-radius: 0 0 10px 10px;
     box-shadow: 0 0 2px rgba(128, 128, 128, 0.7);
+    padding-bottom: 50px;
 }
-
 .container:hover {
     background-color: rgb(249, 249, 251);
     transition: 0.9s linear;
 }
+/* ----------------------------------- CONTAINER SCROLLBAR ------------------------------------ */
+.container::-webkit-scrollbar,
+.container::-webkit-scrollbar {
+	width: 12px;
+	background-color: rgba(245, 245, 245, 0);
+}
+
+/**  STYLE 1 */
+.container::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.9);
+	background-color: #444;
+}
+
+.container::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+/* ------------------------------- end of CONTAINER SCROLLBAR -------------------------------- */
 
 /* ------------------------------------- SLIDING DRAWER -------------------------------------- */
 .main-navigation {
@@ -67,43 +88,28 @@ body {
     background-color: #f7a794;
     cursor: default;
 }
-
+.title {
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-size: 1.6rem;
+    padding-bottom: 10px;
+    color: black;
+    font-weight: 600;
+}
 hr {
     margin: 0 15% 30px 15%;
     border-color: black;
 }
-/* ==================================================================== media query ========== */
-@media screen and (max-device-height: 500px) {
-    .main-navigation {
-        /*        overflow: auto;*/
-    }
-    .main-navigation ul {
-        margin-top: 30vh;
-    }
-    .main-navigation ul a {
-        padding: 1.8vh 4%;
-    }
-    hr {
-        margin: 0 15% 5vh 15%;
-    }
-}
-/* ============================================================== END OF media query ========== */
-
-
-
 #closeBtn {
     top: 101%;
     left: 46%;
     position: fixed;
-    color: #222;
     cursor: pointer;
     font-size: 2em;
 }
-
 #closeBtn:hover {
     /*    color: #55efc4;*/
 }
-
 #closeBtn::after {
     content: "";
     position: absolute;
@@ -117,6 +123,10 @@ hr {
     color: white;
     z-index: -1;
 }
+/* --------------------------------- end of SLIDING DRAWER ---------------------------------- */
+
+
+
 /* ------------------------------------- TOGGLED CLASSES -------------------------------------- */
 .open {
     opacity: 1;
@@ -147,18 +157,8 @@ header {
     outline: none;
 }
 
-.title {
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 1.6rem;
-    padding-bottom: 10px;
-    color: black;
-    font-weight: 600;
-}
 
-
-
-/* -----------------------------------------------------MAIN SECTION ---------------------------------------------- */
+/* -----------------------------------------MAIN SECTION -------------------------------------------- */
 .list-name {
     text-align: center;
     text-transform: uppercase;
@@ -171,7 +171,7 @@ h2 {
     padding: 20px 30px;
 }
 
-/* ----------------- INPUT -------------------- */
+/* ------------------------------------------- INPUT --------------------------- */
 .box {
     display: flex;
     justify-content: center;
@@ -199,42 +199,37 @@ h2 {
 .enter-item:focus {
     box-shadow: inset 2.5px 2.5px 0 0 rgba(0, 0, 0, 0.15);
 }
+/* ------------------------------------- end of INPUT --------------------------- */
 
-/* ------------------- ICON ------------------- */
+
+/* ------------------------------ SUBMIT BUTTON --------------------------------- */
 .submit {
     margin-left: 15px;
     font-size: 2em;
     padding: 0;
-    /*    border: .5px solid black;*/
     border-radius: 50%;
-    /*    border: 5px solid grey;*/
 }
-
 .submit:hover {
     cursor: pointer;
     color: #ff7675;
 
 }
-
 .submit:active {
     transform: translateY(1px);
     box-shadow: none;
     transition: .1s;
 }
+/* --------------------------- end of SUBMIT BUTTON ------------------------------- */
 
-/* ---------------------------------------------- LIST -------------------------------------------------- */
+/* ------------------------------------- TODO LIST -------------------------------------- */
 
 .list {
-    padding-top: 7%;
+    padding: 7% 0;
     display: block;
-    /*    margin-left: 30px;*/
 }
 
 .list li {
-    margin-top: 3px;
-    margin-bottom: 3px;
-    margin-left: 10%;
-    margin-right: 10%;
+    margin: 3px 10%;
     border: 1px solid #e5e6ea;
     list-style: none;
     border-radius: 5px;
@@ -277,32 +272,11 @@ h2 {
 .fa-trash-alt:hover {
     cursor: pointer;
 }
+/* ------------------------------ end of TODO LIST ----------------------------- */
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* =========================================================== MEDIA QUERIES ===================================== */
+/* ============================================================== MEDIA QUERIES ===================================== */
 /* Extra small devices (phones, 600px and down) */
 @media only screen and (min-width: 500px) {
     body {
@@ -312,7 +286,7 @@ h2 {
 
 
 
-
+/* °°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°°° HERE °°°° */
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 992px) {
     body {
@@ -320,15 +294,12 @@ h2 {
     }
 
     hr {
-        margin: 5px 30% 30px 30%;
+        margin-top: 5px;
         border-color: black;
     }
 
     .main-navigation ul {
-        margin: 0 25% 0 25%;
-        margin-top: 300px;
-
-        list-style: none;
+        margin: 20vh 20vw 0 20vw;
     }
 
     .main-navigation ul a {
@@ -338,8 +309,9 @@ h2 {
         font-size: 1.1em;
         font-family: 'Open Sans', sans-serif;
         padding: 10px 0;
+    }   
 
-    }
+
 
     #closeBtn {
         top: 101%;
@@ -371,7 +343,7 @@ h2 {
     /* ---------------------------------------------- LIST -------------------------------------------------- */
 
     .list {
-        padding-top: 7%;
+        padding-top: 7vh;
         display: block;
         /*    margin-left: 30px;*/
     }
@@ -426,7 +398,28 @@ h2 {
 
 }
 
+/* ================================================== media query * max-height: 500px ========== */
+@media screen and (max-height: 500px) {
+    .main-navigation {
+        /*        overflow: auto;*/
+    }
+    .main-navigation ul {
+        margin-top: 20vh;
+    }
+    .main-navigation ul a {
+        padding: 1.8vh 4%;
+    }
+    hr {
+        margin: 0 15% 5vh 15%;
+    }
+}
 
+@media only screen and (min-height: 650px) {
+    .main-navigation ul {
+        margin: 40vh 20vw 0 20vw;
+    }
+}
+/* ============================================================== END OF media query ========== */
 
 
 
