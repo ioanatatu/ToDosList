@@ -1,8 +1,8 @@
 # ToDosList
 
-My spin on an exercise from a udemy course. A combination of vanilla JS and jQuery manages the following:
+I took an exercise from a udemy course one step further and used it as an opportunity to learn how to build a sliding drawer with css and jQuery and how to syle up a scroll bar. A combination of vanilla JS and jQuery manages the following:
 1. the adding/ removing of li html elements to the list,
-2. toggling the sliding drawer class in css (I wanted to learn how to build a sliding drawer with css and jQuery),
+2. toggling the sliding drawer class in css,
 3. passing the name of the list to the sliding drawer title,
 4. changing the icon arrow of the sliding drawer and making list invisible,
 5. not allowing 1. if nothing has been typed into the input field.
