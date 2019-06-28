@@ -6,6 +6,8 @@ My spin on an exercise from a udemy course. A combination of vanilla JS and jQue
 3. passing the name of the list to the sliding drawer title,
 4. changing the icon arrow of the sliding drawer and making list invisible,
 5. not allowing 1. if nothing has been typed into the input field.
+--
+Additionally I also learned how to user git through the command line instead of using the GitHub Desktop.
 
 # What user can do:
 1. personalize the name of the to do list by just clicking on it and then clicking away or hitting the enter/ esc key
