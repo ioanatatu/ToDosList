@@ -21,7 +21,9 @@
 <body>
     <div class="container">
         <header>
-            <div onkeypress="return (this.innerText.length <= 20)" class="site-title" contenteditable="true" spellcheck="false">your todos list</div>
+            <div class="site-title">
+                <div onkeypress="return (this.innerText.length <= 20)" class="listName" contenteditable="true" spellcheck="false">your todos list</div>
+            </div>
             <nav class="main-navigation" role="navigation">
                 <ul id="todo">
                     <li class="title">how <span>it</span> works</li>
@@ -62,6 +64,4 @@
         </main>
     </div>
     <script src="script.js"></script>
-</body>
-
-</html>
+</body></html>

@@ -6,83 +6,73 @@ function printLocation() {
     console.trace();
 }
 
-// 01_GLOBAL VARIABLES ----------------------------------------------------------------------------------------------------------------
-let nameList = document.querySelector('.site-title');
-// 01.01_NUMBERS ==========
+// 01_GLOBAL VARIABLES ----------------------------------------------------------------------------------------------
+let nameList = document.querySelector('.listName');
+let nameOnSlider = document.querySelector('.title span');
+console.log(nameOnSlider);
+// 02_EVENT LISTENERS
 
-// 02_EVENT LISTENERS ------------------------------------------------------------------------------------
-
-// 03_FUNCTIONS -----------------------------------------------------------------
-// 03.01_OPEN/ CLOSE SLIDING DRAWER and change icon ----------------------------------------------------------- 
+// 03_FUNCTIONS -----------------------------------------------------------------------------------------------------
+// 03.01_OPEN/ CLOSE SLIDING DRAWER and change icon  
 $('#closeBtn').click(function () {
-    console.log('connected');
     $('.main-navigation').toggleClass('open');
+    
     let nav = $('nav');
     let btn = $('#closeBtn');
     console.log(nav.hasClass('open'));
     if (nav.hasClass('open')) {
         btn.attr('class', 'fas fa-chevron-circle-up');
+        $('main').css('opacity', '0');
     } else {
         btn.attr('class', 'fas fa-chevron-circle-down');
+        $('main').css('opacity', '1');
     }
 });
-// 03.02_EDIT LIST NAME AND PASS IT TO THE TITLE ON THE SLIDING DRAWER ----------------------------------------------------------
+// 03.02_EDIT LIST NAME AND PASS IT TO THE TITLE ON THE SLIDING DRAWER ----------------------------------------------
 document.querySelector('.container').addEventListener('click', event => {
-    const listName = document.querySelector('.site-title'); // targeted element
+    const listName = document.querySelector('.listName'); // targeted element
     let clickTarget = event.target; // clicked element
     let listNameOnSlide = document.querySelector('.title span');
-    console.log(listName.textContent);
 
     if (clickTarget === listName) {
         nameList.contentEditable = 'true';
         nameList.classList.add('editable');
-
         nameList.addEventListener('keydown', removeEditableWithEnterKey);
     } else {
-        replaceListName(listNameOnSlide);
+        if (listName.textContent !== 'your todos list') {
+            replaceListName(listNameOnSlide);
+        }
         nameList.classList.remove('editable');
         nameList.addEventListener('keydown', removeEditableWithEnterKey);
+        console.log(nameOnSlider);
     }
 });
-// 03.02_ASSOCIATED FUNCTIONS
-// 03.02.01_REMOVE EDITABILITY WITH ENTER KEY
+// 03.02.01_REMOVE EDITABILITY WITH ENTER KEY -----------------------------------------------------------------------
 function removeEditableWithEnterKey() {
-    let listNameOnSlide = document.querySelector('.title span');
-
-    if (event.keyCode === 13) {
+    if (event.keyCode === 13 || event.keyCode === 27) {
         nameList.contentEditable = 'false';
         nameList.classList.toggle('editable');
         nameList.classList.remove('editable');
-        replaceListName(listNameOnSlide);
     }
 }
-
+// 03.02.02_REPLACING THE NAME ON THE SLIDING DRAWER ----------------------------------------------------------------
 function replaceListName(listNameOnSlide) {
+    console.log(nameOnSlider);
     listNameOnSlide.textContent = nameList.textContent;
     listNameOnSlide.style.fontWeight = '600';
 }
-
-
-
-// testing *********************************************************
-
-
-
-
-
-
-// 3.4.DELETES TODO WHEN CLICK ON X ------------------------------------------------------------------------------------------------------------------------
+// 03.03.DELETES TODO WHEN CLICK ON X -------------------------------------------------------------------------------
 $("ul").on("click", "span", function (event) {
     $(this).parent().fadeOut(500, function () {
         $(this).remove();
     });
     event.stopPropagation();
 });
-// 3.3.STRIKES THROUGH IF AN ITEM IS COMPLETED ------------------------------------------------------------------------------------------------------------------------
+// 03.04.STRIKES THROUGH IF AN ITEM IS COMPLETED --------------------------------------------------------------------
 $("ul[class='list']").on("click", "li", function () {
     $(this).toggleClass("completed");
 });
-// 3.2.ADDS INPUT - CREATES NEW LI - TO ONE OF THE LISTS ------------------------------------------------------------------------------------------------------------------------
+// 03.05.ADDS INPUT - CREATES NEW LI - TO ONE OF THE LISTS ----------------------------------------------------------
 $(".submit").on("click", function () {
     var input = $("input[type='text']").val();
     // checks if input equals the string "enter an item", otherwise it will add "enter an item" as item to the list
@@ -102,3 +92,15 @@ $(".submit").on("click", function () {
         }
     }
 });
+
+// testing *********************************************************
+
+
+
+
+
+
+
+
+
+

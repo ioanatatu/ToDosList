@@ -37,7 +37,6 @@ body {
 }
 
 /* ---------------------------------- 0.1. CONTAINER SCROLLBAR ----------------------------------- */
-.container::-webkit-scrollbar,
 .container::-webkit-scrollbar {
     width: 12px;
     background-color: rgba(245, 245, 245, 0);
@@ -55,6 +54,7 @@ body {
     border-radius: 10px;
     background-color: #F5F5F5;
 }
+
 /* -------------------------------- end of CONTAINER SCROLLBAR -------------------------------- */
 
 /* ----------------------------------- 0.2. SLIDING DRAWER ------------------------------------ */
@@ -94,7 +94,7 @@ body {
     cursor: default;
 }
 
-.title {
+.title, .title span {
     text-transform: uppercase;
     letter-spacing: 1.5px;
     font-size: 1.6rem;
@@ -142,6 +142,9 @@ hr {
     color: #00cec9;
     text-decoration: line-through;
 }
+main {
+    opacity: 1;
+}
 /* ----------------------------------- end of TOGGLED CLASSES ----------------------------------- */
 
 header {
@@ -150,15 +153,17 @@ header {
 }
 
 .site-title {
+    padding: 90px 0 20px 0;
+}
+
+.listName {
     color: black;
     font-size: 2rem;
     font-weight: 600;
     text-align: center;
-    padding: 90px 0 20px 0;
-    font-size: 2em;
 }
 
-.site-title:focus {
+.listName:focus {
     outline: none;
 }
 
