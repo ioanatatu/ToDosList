@@ -1,6 +1,6 @@
 # ToDosList
 
-I took an exercise from a udemy course one step further and used it as an opportunity to learn how to build a sliding drawer with css and jQuery and how to syle up a scroll bar. A combination of vanilla JS and jQuery manages the following:
+I took an exercise from a udemy course one step further and used it as an opportunity to learn how to build a sliding drawer with css and jQuery and how to style up a scroll bar. A combination of vanilla JS and jQuery manages the following:
 1. the adding/ removing of li html elements to the list,
 2. toggling the sliding drawer class in css,
 3. passing the name of the list to the sliding drawer title,
@@ -9,7 +9,7 @@ I took an exercise from a udemy course one step further and used it as an opport
 --
 Additionally I also learned how to user git through the command line instead of using the GitHub Desktop.
 
-# What user can do:
+# What the user can do:
 1. personalize the name of the to do list by just clicking on it and then clicking away or hitting the enter/ esc key
 2. add new to do item to the list
 3. delete item by clicking/ tapping on the bin
